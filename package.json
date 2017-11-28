@@ -1,0 +1,23 @@
+{
+  "name": "tmmall-fe",
+  "version": "1.0.0",
+  "description": "商城代码",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Rile14929/tmmall-fe.git"
+  },
+  "author": "liu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rile14929/tmmall-fe/issues"
+  },
+  "homepage": "https://github.com/Rile14929/tmmall-fe#readme",
+  "devDependencies": {
+    "webpack": "^1.15.0"
+  },
+  "dependencies": {}
+}
