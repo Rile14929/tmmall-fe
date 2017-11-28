@@ -1,4 +1,4 @@
-
+var webpack = require('webpack')
 var config = {
     entry: {
         'index':['./src/page/index/index.js'],
@@ -10,6 +10,12 @@ var config = {
     },
     externals:{
         'jquery':'window.jQuery'
-    }
+    },
+    plugins:[
+        new webpack.optimize.CommonsChunkPlugin({
+            name : 'commons',
+            filename : 'js/base.js'
+        })
+    ]
 };
 module.exports = config
