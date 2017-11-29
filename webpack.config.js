@@ -2,6 +2,10 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// 环境变量的配置 判断是线上环境还是开发环境
+var WEBPACK_ENV = process.env.WEBPACK_ENV||'dev'
+
+// 获取html-webpack-plugin参数的方法
 var getHtmlConfig = function(name){
     return {
         template:'./src/view/'+name+'.html',
@@ -21,6 +25,7 @@ var config = {
     },
     output: {
         path: './dist',
+        publicPath:'/dist',
         filename: 'js/[name].js'
     },
     externals:{
@@ -45,4 +50,8 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('login'))
     ]
 };
+
+if('dev' ===WEBPACK_ENV){
+    config.entry.common.push('webpack-dev-server/client?http://localhost:8088/')
+}
 module.exports = config
