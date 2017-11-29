@@ -1,2 +1,2 @@
 # tmmall-fe
-mall v_1.0
+mall v_1.00
