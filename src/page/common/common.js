@@ -1,1 +1,6 @@
-console.log("123456789")
+console.log("common")
+require('./layout.css')
+
+require('modules/font-awesome/css/font-awesome.min.css')
+require('./footer/index.css')
+
