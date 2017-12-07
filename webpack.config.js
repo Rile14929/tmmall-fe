@@ -22,8 +22,13 @@ var config = {
     entry: {
         'common':['./src/page/common/common.js'],
         'index':['./src/page/index/index.js'],
-        'login':['./src/page/login/login.js'],
-        'result':['./src/page/result/result.js']       
+        'user-login':['./src/page/user-login/login.js'],
+        'user-register':['./src/page/user-register/register.js'],
+        'user-center':['./src/page/user-center/user-center.js'],
+        'user-center-update':['./src/page/user-center-update/user-center-update.js'],
+        'user-pass-reset':['./src/page/user-pass-reset/pass-reset.js'],
+        'user-pass-update':['./src/page/user-pass-update/user-pass-update.js'],
+        'result':['./src/page/result/result.js']
     },
     output: {
         path: './dist',
@@ -60,7 +65,12 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
         // html模板的处理
         new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('login','用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','找回密码')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-update','修改密码')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center','个人中心')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息')),
         new HtmlWebpackPlugin(getHtmlConfig('result','操作结果'))
     ]
 };

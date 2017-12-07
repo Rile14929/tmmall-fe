@@ -17,22 +17,22 @@ var nav = {
         })
         // 注册点击是事件
         $('.js-register').click(function(){
-            window.location.href = './register.html'
+            window.location.href = './user-register.html'
         })
         // 退出点击事件
         $('.js-logout').click(function(){
             _user.logout(function(res){
-                window.location.reload()
-            },function(errMsg){
-                _mm.errorTips(errMsg)
-            })
-        })
+                window.location.reload();
+            }, function(errMsg){
+                _mm.errorTips(errMsg);
+            });
+        });
     },
     // 加载用户信息
     loadUserInfo:function(){
         _user.checkLogin(function(res){
             $('.user.not-login').hide().siblings('.user.login').show()
-            .find('.username').text(res.username)
+            .find('.username').text(res.username);
         },function(errMsg){
             // do nothing
         })

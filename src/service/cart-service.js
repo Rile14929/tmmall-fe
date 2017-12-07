@@ -4,7 +4,7 @@ var _cart = {
     getCartCount:function(resolve,reject){
         _mm.request({
             url : _mm.getServerUrl('/cart/get_cart_product_count.do'),
-            succese :resolve,
+            success :resolve,
             error:reject
         })
     }
