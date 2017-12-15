@@ -22,6 +22,8 @@ var config = {
     entry: {
         'common':['./src/page/common/common.js'],
         'index':['./src/page/index/index.js'],
+        'list':['./src/page/list/list.js'],
+        'detail':['./src/page/detail/detail.js'],
         'user-login':['./src/page/user-login/login.js'],
         'user-register':['./src/page/user-register/register.js'],
         'user-center':['./src/page/user-center/user-center.js'],
@@ -65,6 +67,8 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
         // html模板的处理
         new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('list','商品列表页')),
+        new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情页')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','找回密码')),
