@@ -1,11 +1,11 @@
-require('./detail.css')
+require('./index.css')
 require('page/common/nav/index.js')
 require('page/common/header/index.js')
 
 var _mm = require('util/mm.js')
 var _product = require('service/product-service')
 var _cart = require('service/cart-service')
-var templateIndex   = require('./detail.string');
+var templateIndex   = require('./index.string');
 
 var page = {
     data:{

@@ -1,10 +1,10 @@
 require('page/common/nav/index.js')
 require('page/common/header/index.js')
-require('./user-center.css')
+require('./index.css')
 var navSide=require('page/common/nav-side/index.js')
 var _mm = require('util/mm.js')
 var _user = require('service/user-service')
-var templateIndex   = require('./user-center.string');
+var templateIndex   = require('./index.string');
 var page = {
     init: function(){
         this.onLoad();

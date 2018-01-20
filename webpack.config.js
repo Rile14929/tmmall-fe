@@ -10,37 +10,37 @@ var getHtmlConfig = function(name,title){
     return {
         template:'./src/view/'+name+'.html',
         filename:'view/'+name+'.html',
+        favicon:'./favicon.ico',
         title:title,
         inject:true,
         hash:true,
         chunks:['common',name]
     }
 }
-
-
 var config = {
     entry: {
-        'common':['./src/page/common/common.js'],
+        'common':['./src/page/common/index.js'],
         'index':['./src/page/index/index.js'],
-        'list':['./src/page/list/list.js'],
-        'detail':['./src/page/detail/detail.js'],
-        'cart':['./src/page/cart/cart.js'],
-        'order-confirm':['./src/page/order-confirm/order-confirm.js'],
-        'order-list':['./src/page/order-list/order-list.js'],
-        'order-detail':['./src/page/order-detail/order-detail.js'],
-        'payment':['./src/page/payment/payment.js'],
-        'user-login':['./src/page/user-login/login.js'],
-        'user-register':['./src/page/user-register/register.js'],
-        'user-center':['./src/page/user-center/user-center.js'],
-        'user-center-update':['./src/page/user-center-update/user-center-update.js'],
-        'user-pass-reset':['./src/page/user-pass-reset/pass-reset.js'],
-        'user-pass-update':['./src/page/user-pass-update/user-pass-update.js'],
-        'result':['./src/page/result/result.js']
+        'list':['./src/page/list/index.js'],
+        'detail':['./src/page/detail/index.js'],
+        'cart':['./src/page/cart/index.js'],
+        'order-confirm':['./src/page/order-confirm/index.js'],
+        'order-list':['./src/page/order-list/index.js'],
+        'order-detail':['./src/page/order-detail/index.js'],
+        'payment':['./src/page/payment/index.js'],
+        'user-login':['./src/page/user-login/index.js'],
+        'user-register':['./src/page/user-register/index.js'],
+        'user-center':['./src/page/user-center/index.js'],
+        'user-center-update':['./src/page/user-center-update/index.js'],
+        'user-pass-reset':['./src/page/user-pass-reset/index.js'],
+        'user-pass-update':['./src/page/user-pass-update/index.js'],
+        'result':['./src/page/result/index.js'],
+        'about':['./src/page/about/index.js'],
     },
     output: {
-        path: './dist',
-        publicPath:'/dist',
-        filename: 'js/[name].js'
+        path        : __dirname + '/dist/',
+        publicPath  : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/tmmall-fe/dist/',
+        filename    : 'js/[name].js'
     },
     externals:{
         'jquery':'window.jQuery'
@@ -48,8 +48,14 @@ var config = {
     module:{
         loaders:[
             {test:/\.css$/,loader:ExtractTextPlugin.extract("style-loader","css-loader")},
-            {test:/\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/,loader:'url-loader?limit=5000&name=resource/[name].[ext]'},
-            {test:/\.string$/,loader:'html-loader'}
+            {test:/\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/,loader:'url-loader?limit=100&name=resource/[name].[ext]'},
+            {test:/\.string$/,
+                loader:'html-loader',
+                query : {
+                minimize : true,
+                removeAttributeQuotes : false
+                }
+            }
         ]
     },
     resolve:{
@@ -85,11 +91,12 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-update','修改密码')),
         new HtmlWebpackPlugin(getHtmlConfig('user-center','个人中心')),
         new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息')),
-        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果'))
+        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('about','关于MMall')),
     ]
 };
 
-if('dev' ===WEBPACK_ENV){
+if('dev' === WEBPACK_ENV){
     config.entry.common.push('webpack-dev-server/client?http://localhost:8088/')
 }
 module.exports = config

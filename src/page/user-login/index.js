@@ -1,4 +1,4 @@
-require('./register.css');
+require('./index.css');
 require('page/common/nav-simple/index.js');
 var _user   = require('service/user-service.js');
 var _mm     = require('util/mm.js');
@@ -20,21 +20,7 @@ var page = {
     },
     bindEvent : function(){
         var _this = this;
-        // 验证username
-        $('#username').blur(function(){
-            var username = $.trim($(this).val());
-            // 如果用户名为空,不做验证
-            if(!username){
-                return;
-            }
-            // 异步验证用户名是否存在
-            _user.checkUsername(username,function(res){
-                formError.hide();
-            },function(errMsg){
-                formError.show(errMsg)
-            })
-        })
-        // 注册按钮的点击
+        // 登录按钮的点击
         $('#submit').click(function(){
             _this.submit();
         });
@@ -50,20 +36,14 @@ var page = {
     submit : function(){
         var formData = {
                 username : $.trim($('#username').val()),
-                password : $.trim($('#password').val()),
-                passwordConfirm : $.trim($('#passwordConfirm').val()),
-                phone : $.trim($('#phone').val()),
-                email : $.trim($('#email').val()),
-                question : $.trim($('#question').val()),
-                answer : $.trim($('#answer').val()),
-
+                password : $.trim($('#password').val())
             },
             // 表单验证结果
             validateResult = this.formValidate(formData);
         // 验证成功
         if(validateResult.status){
-            _user.register(formData, function(res){
-                window.location.href = './result.html?type=register';
+            _user.login(formData, function(res){
+                window.location.href = _mm.getUrlParam('redirect') || './index.html';
             }, function(errMsg){
                 formError.show(errMsg);
             });
@@ -87,30 +67,6 @@ var page = {
         }
         if(!_mm.validate(formData.password, 'require')){
             result.msg = '密码不能为空';
-            return result;
-        }
-        if(formData.password.length<6){
-            result.msg = '密码长度不能小于6位';
-            return result;
-        }
-        if(formData.password!==formData.passwordConfirm){
-            result.msg = '两次输入的密码不一致';
-            return result;
-        }
-        if(!_mm.validate(formData.phone, 'phone')){
-            result.msg = '手机号格式不正确';
-            return result;
-        }
-        if(!_mm.validate(formData.email, 'email')){
-            result.msg = '邮箱格式有误';
-            return result;
-        }
-        if(!_mm.validate(formData.question,'require')){
-            result.msg = '密码提示问题不能为空';
-            return result;
-        }
-        if(!_mm.validate(formData.answer,'require')){
-            result.msg = '密码提示问题答案不能为空';
             return result;
         }
         // 通过验证，返回正确提示

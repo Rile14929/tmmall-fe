@@ -1,10 +1,10 @@
 require('page/common/nav/index.js')
 require('page/common/header/index.js')
-require('./order-list.css')
+require('./index.css')
 var navSide=require('page/common/nav-side/index.js')
 var _mm = require('util/mm.js')
 var _order = require('service/order-service')
-var templateIndex   = require('./order-list.string');
+var templateIndex   = require('./index.string');
 var Pagination = require('util/pagination/index.js')
 var page = {
     data:{

@@ -1,9 +1,9 @@
-require('./cart.css')
+require('./index.css')
 require('page/common/header/index.js')
 var nav = require('page/common/nav/index.js')
 var _mm = require('util/mm.js')
 var _cart = require('service/cart-service')
-var templateIndex   = require('./cart.string');
+var templateIndex   = require('./index.string');
 
 var page = {
     data:{

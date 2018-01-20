@@ -1,9 +1,9 @@
 require('page/common/nav/index.js')
 require('page/common/header/index.js')
-require('./list.css')
+require('./index.css')
 var _mm = require('util/mm.js')
 var _product = require('service/product-service')
-var templateIndex   = require('./list.string');
+var templateIndex   = require('./index.string');
 var Pagination = require('util/pagination/index.js')
 
 var page = {
