@@ -27,14 +27,14 @@
 <h5>个人博客 :</h5><br/>
    <a>https://www.liuyuxuan6.com/</a>
 
-
-charles转发配置如下:
- http://localhost:8088/cart/get_cart_product_count.do	   -> http://www.happymmall.com:80/cart/get_cart_product_count.do
-	http://localhost:8088/product/list.do	                  -> http://happymmall.com:80/product/list.do
-	http://localhost:8088/user/*	                           -> http://www.happymmall.com:80/user/
-	http://localhost:8088/product/*	                        -> http://www.happymmall.com:80/product/
-	http://localhost:8088/cart/*	                           -> http://www.happymmall.com:80/cart/
-	http://localhost:8088/order/*	                          -> http://www.happymmall.com:80/order/
-	http://localhost:8088/shipping/*	                       -> http://www.happymmall.com:80/shipping/
-	http://localhost:8086/manage/*	                         -> http://www.happymmall.com:80/manage/
+<br/><br/>
+charles转发配置如下:<br/>
+http://localhost:8088/cart/get_cart_product_count.do	   -> http://www.happymmall.com:80/cart/get_cart_product_count.do<br/>
+http://localhost:8088/product/list.do	                   -> http://happymmall.com:80/product/list.do<br/>
+http://localhost:8088/user/*	                           -> http://www.happymmall.com:80/user/<br/>
+http://localhost:8088/product/*	                           -> http://www.happymmall.com:80/product/<br/>
+http://localhost:8088/cart/*	                           -> http://www.happymmall.com:80/cart/<br/>
+http://localhost:8088/order/*	                           -> http://www.happymmall.com:80/order/<br/>
+http://localhost:8088/shipping/*	                   -> http://www.happymmall.com:80/shipping/<br/>
+http://localhost:8086/manage/*	                           -> http://www.happymmall.com:80/manage/<br/>
 
