@@ -36,5 +36,5 @@ http://localhost:8088/product/*	 -> http://www.happymmall.com:80/product/<br/>
 http://localhost:8088/cart/*	   -> http://www.happymmall.com:80/cart/<br/>
 http://localhost:8088/order/*	  -> http://www.happymmall.com:80/order/<br/>
 http://localhost:8088/shipping/*	 -> http://www.happymmall.com:80/shipping/<br/>
-http://localhost:8086/manage/*	 -> http://www.happymmall.com:80/manage/<br/>
+http://localhost:8086/manage/*	 -> http://admintest.happymmall.com:80/manage/<br/>
 
