@@ -1,10 +1,3 @@
-/*
-* @Author: Rosen
-* @Date:   2017-05-15 15:26:38
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-21 14:58:37
-*/
-
 'use strict';
 var Hogan = require('hogan.js');
 var conf = {
@@ -50,6 +43,7 @@ var _mm = {
     },
     // 渲染html模板
     renderHtml : function(htmlTemplate, data){
+        // 编译和渲染
         var template    = Hogan.compile(htmlTemplate),
             result      = template.render(data);
         return result;
